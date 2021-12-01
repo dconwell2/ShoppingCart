@@ -1,5 +1,6 @@
 package com.company;
 
+//Our Project
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -16,7 +17,7 @@ public class GUI{
     private JPanel panel,foodPanel;
     private JButton viewcartButton,browseButton,exitButton,checkOutButton,aButton, aRButton,bButton,bRButton,oButton,oRButton,gButton,gRButton,pButton,pRButton,backButton;
     private ImageIcon image2;
-
+    //hello
     ShoppingCart cart;
 
 public GUI() {
@@ -94,7 +95,9 @@ public GUI() {
             bButton.addActionListener(new ActionListener() {
                                           @Override
                                           public void actionPerformed(ActionEvent e) {
-                                              userText.setText("Banana Added to Cart");
+                                              Item banana = new Item("banana", 2.50);
+                                              sCart.AddItem(banana);
+                                              userText.setText(sCart.toString());
                                           }
                                       }
             );
@@ -103,7 +106,9 @@ public GUI() {
             bRButton.addActionListener(new ActionListener() {
                                            @Override
                                            public void actionPerformed(ActionEvent e) {
-                                               userText.setText("Removed Banana From Cart");
+                                               Item banana = new Item("banana", 2.50);
+                                               sCart.RemoveItem(banana);
+                                               userText.setText(sCart.toString());
                                            }
                                        }
             );

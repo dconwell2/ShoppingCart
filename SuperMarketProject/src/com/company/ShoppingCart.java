@@ -11,6 +11,7 @@ public class ShoppingCart {
 
 
    private int appleCount;
+   private int bananaCount;
 
     public ShoppingCart()
     {
@@ -28,6 +29,11 @@ public class ShoppingCart {
             totalCost += 3;
             appleCount++;
         }
+        if(Objects.equals(item.getName(), "banana"))
+        {
+            totalCost += item.getCost();
+            bananaCount++;
+        }
     }
 
     public void RemoveItem(Item item)
@@ -35,15 +41,20 @@ public class ShoppingCart {
         cart.remove(lastIndex);
         lastIndex--;
 
-        if(item.getName() == "apple")
+        if(Objects.equals(item.getName(), "apple"))
         {
-            totalCost -= 3;
+            totalCost -= item.getCost();
             appleCount--;
+        }
+        if(Objects.equals(item.getName(), "banana"))
+        {
+            totalCost -= item.getCost();
+            bananaCount--;
         }
     }
 
     @Override
     public String toString() {
-        return "Apples: " + appleCount + "Total Cost: " + totalCost;
+        return "Apples: " + appleCount + " Bananas: " + bananaCount + "Total Cost: " + totalCost;
     }
 }
