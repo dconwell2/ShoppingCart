@@ -9,7 +9,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JFrame;
 import javax.swing.JButton;
-
+//hello
 public class GUI{
     private JLabel label,label2,userText;
     private JFrame frame,foodFrame;
